@@ -1,0 +1,19 @@
+/*
+ * Complete the 'reverseArray' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY a as parameter.
+ */
+
+vector<int> reverseArray(vector<int> arr) {
+    
+    int i , j= arr.size()-1,temp;
+    
+    for(i=0; i<j; i++, j--)
+    {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+     return arr;
+}
