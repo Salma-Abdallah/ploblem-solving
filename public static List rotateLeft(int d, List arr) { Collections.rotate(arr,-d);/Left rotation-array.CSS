@@ -1,0 +1,26 @@
+* The function is expected to return an INTEGER_ARRAY.
+ * The function accepts following parameters:
+ *  1. INTEGER d
+ *  2. INTEGER_ARRAY arr
+ */
+
+vector<int> rotateLeft(int d, vector<int> arr) {
+    int size=arr.size();
+    int result[size];
+    size--;
+    for(int j=0 ; j<d ;j++)
+    {
+        for(int i=0 ; i<arr.size() ; i++ ){
+            if(i==0)
+                result[size]=arr[i];
+            else{
+                result[i-1]=arr[i];
+            }
+        
+        }
+        for(int i=0 ; i<arr.size();i++)
+            arr[i]=result[i];
+         
+    }
+    return arr;
+}
