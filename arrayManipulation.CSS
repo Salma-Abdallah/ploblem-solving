@@ -1,0 +1,34 @@
+* Complete the 'arrayManipulation' function below.
+ *
+ * The function is expected to return a LONG_INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER n
+ *  2. 2D_INTEGER_ARRAY queries
+ */
+
+long arrayManipulation(int n, vector<vector<int>> queries) {
+
+    vector<long int> arr(n); 
+    int lenght = queries.size();
+    for(int i=0; i<lenght; i++)
+    {
+        
+        arr[(queries[i][0])-1] = arr[(queries[i][0])-1]+queries[i][2];
+        if(queries[i][1]<n) 
+        {
+            arr[(queries[i][1])] = arr[(queries[i][1])]-queries[i][2]; 
+        }
+       
+    }
+    long sum =0,x=0;
+    for(long i=0; i<n; i++)
+        {
+            x = x + arr[i];
+            if(x>sum)
+            {
+                sum = x;
+            }
+        }
+    return sum;
+    
+}
